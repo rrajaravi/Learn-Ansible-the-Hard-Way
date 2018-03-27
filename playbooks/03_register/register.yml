@@ -1,0 +1,9 @@
+---
+- hosts: mysite
+  tasks:
+    - name: run a command and capture the command output
+      command: uptime
+      register: UPTIME
+
+    - name: print it on stdout
+      debug: msg="{{ UPTIME.stdout }}"

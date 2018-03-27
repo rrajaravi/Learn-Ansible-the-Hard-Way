@@ -1,0 +1,5 @@
+---
+- hosts: mysite
+  tasks:
+    - name: run a os or application command
+      command: uname -a 
