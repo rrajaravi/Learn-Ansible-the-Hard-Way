@@ -1,0 +1,18 @@
+---
+- hosts: mysite
+  tasks:
+    - name: run whoami command to get current user name
+      command: whoami
+      register: WHOAMI
+
+    - name: print it on stdout
+      debug: msg="{{ WHOAMI.stdout }}"
+    
+    - name: run whoami command to get current user name
+      command: whoami
+      register: WHOAMI
+      become: yes
+
+    - name: print it on stdout
+      debug: msg="{{ WHOAMI.stdout }}"
+     

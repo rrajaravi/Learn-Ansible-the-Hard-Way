@@ -1,0 +1,16 @@
+---
+- hosts: mysite
+  tasks:
+    - name: run a os or application command with pipe
+      shell: uname -a
+      register: UNAME
+
+    - name: print it on stdout
+      debug: msg="{{ UNAME.stdout }}"
+
+    - name: run a os or application command with pipe
+      shell: uname -a | awk '{print $1}'
+      register: UNAME
+
+    - name: print it on stdout
+      debug: msg="{{ UNAME.stdout }}"

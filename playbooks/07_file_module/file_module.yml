@@ -1,0 +1,8 @@
+---
+- hosts: mysite
+  tasks:
+    - name: check a file if exist
+      file:
+        name: /etc/hosts
+        state: file
+        

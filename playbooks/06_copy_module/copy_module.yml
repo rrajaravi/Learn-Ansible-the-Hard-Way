@@ -1,0 +1,7 @@
+---
+- hosts: mysite
+  tasks:
+    - name: copy a file to remote system
+      copy:
+        src: /etc/hosts
+        dest: /tmp
