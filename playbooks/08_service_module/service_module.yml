@@ -1,0 +1,9 @@
+---
+- hosts: mysite
+  become: yes
+
+  tasks:
+    - name: Restart linux cron service
+      service:
+        name: cron
+        state: restarted 

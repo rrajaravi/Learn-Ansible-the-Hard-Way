@@ -1,0 +1,17 @@
+---
+- hosts: mysite
+
+  tasks:
+    - name: run commands
+      command: "{{ item}}"
+      with_items:
+        - whoami
+        - uname
+
+    - name: copy files to remote system
+      copy:
+        src: "src/{{ item }}"
+        dest: /tmp
+      with_items:
+        - file1
+        - file2

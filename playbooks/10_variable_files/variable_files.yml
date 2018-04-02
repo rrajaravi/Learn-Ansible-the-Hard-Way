@@ -1,0 +1,12 @@
+---
+- hosts: mysite
+  become: yes
+  vars_files:
+    - file2
+    - var_file1
+
+  tasks:
+    - name: "linux service: {{ SERVICE_NAME }} operation: {{ SERVICE_OPERATION }}"
+      service:
+        name: "{{ SERVICE_NAME }}"
+        state: "{{ SERVICE_OPERATION }}"

@@ -1,0 +1,21 @@
+---
+- hosts: mysite
+  become: yes
+
+  tasks:
+    - name: get confirmation from user
+      pause:
+        prompt: "Hit Enter to continue or ctrl + c to quit"
+
+    - name: restart sshd service
+      service:
+        name: sshd
+        state: restarted
+ 
+    - name: wait for 5 seconds
+      pause:
+        seconds: 5        
+    
+    - name: end message
+      debug:
+        msg: "sshd service restarted successfully"

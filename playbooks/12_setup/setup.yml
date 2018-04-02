@@ -1,0 +1,18 @@
+---
+- hosts: mysite
+  tasks:
+    - name: print OS name gathered by setup
+      debug:
+        msg: "{{ ansible_distribution }}"
+
+    - name: print IP address gathered by setup
+      debug:
+        msg: "{{ ansible_all_ipv4_addresses }}"
+
+- hosts: mysite
+  gather_facts: false
+
+  tasks:
+    - name: print 
+      debug:
+        msg: "setting gather_facts as false, do not gather setup information, hence there will be no ansibel_ variables "

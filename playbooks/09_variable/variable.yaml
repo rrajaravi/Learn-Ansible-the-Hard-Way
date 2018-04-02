@@ -1,0 +1,13 @@
+---
+- hosts: mysite
+  vars:
+    USER_NAME: "Raja"
+    welcome_msg: "Thanks for running it.. Happy learning !!"
+    greeting: "Hi {{ USER_NAME }}, {{ welcome_msg }}"
+    
+ 
+  tasks:
+    - name: print greeting message
+      debug:
+        msg: "{{ greeting }}"
+  
